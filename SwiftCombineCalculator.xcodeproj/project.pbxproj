@@ -20,6 +20,7 @@
 		814D9CFE2B7EF8ED005D9849 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CFB2B7EF8ED005D9849 /* Utility.swift */; };
 		814D9CFF2B7EF8ED005D9849 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CFC2B7EF8ED005D9849 /* Constant.swift */; };
 		814D9D022B7F0217005D9849 /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 814D9D012B7F0217005D9849 /* WWPrint */; };
+		81C81F872B7F14AB0070DE19 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C81F862B7F14AB0070DE19 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		814D9CFA2B7EF8ED005D9849 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		814D9CFB2B7EF8ED005D9849 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		814D9CFC2B7EF8ED005D9849 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		81C81F862B7F14AB0070DE19 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 		814D9CF92B7EF8DA005D9849 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				81C81F862B7F14AB0070DE19 /* Model.swift */,
 				814D9CFC2B7EF8ED005D9849 /* Constant.swift */,
 				814D9CFA2B7EF8ED005D9849 /* Extension.swift */,
 				814D9CFB2B7EF8ED005D9849 /* Utility.swift */,
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C81F872B7F14AB0070DE19 /* Model.swift in Sources */,
 				814D9CFE2B7EF8ED005D9849 /* Utility.swift in Sources */,
 				814D9CCA2B7EF348005D9849 /* AlgebraicAverageViewController.swift in Sources */,
 				814D9CC62B7EF348005D9849 /* AppDelegate.swift in Sources */,

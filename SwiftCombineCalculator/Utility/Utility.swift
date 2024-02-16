@@ -17,16 +17,34 @@ final class Utility: NSObject {
 // MARK: - 小工具 (function)
 extension Utility {
     
-    func labelMaker(text: String?, font: UIFont, backgroundColor: UIColor = .clear, textColor: UIColor? = Constant.ThemeColor.text.color(), textAlignment: NSTextAlignment = .center) -> UILabel {
+    /// 自訂小費的Alert
+    /// - Parameter completion: (Int) -> Void
+    /// - Returns: UIAlertController
+    func customAlertControllerMaker(completion: @escaping (Int) -> Void) -> UIAlertController {
         
-        let label = UILabel()
+        let alertController = UIAlertController(title: "請輸入自訂小費", message: nil, preferredStyle: .alert)
         
-        label.text = text
-        label.font = font
-        label.backgroundColor = backgroundColor
-        label.textColor = textColor
-        label.textAlignment = textAlignment
+        alertController.addTextField { textFiled in
+            textFiled.placeholder = "不要客氣啊"
+            textFiled.keyboardType = .numberPad
+            textFiled.autocapitalizationType = .none
+        }
+                
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            
+            guard let textField = alertController.textFields?.first,
+                  let text = textField.text,
+                  let value = text._Int()
+            else {
+                return
+            }
+            
+            completion(value)
+        }
         
-        return label
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        [okAction, cancelAction].forEach(alertController.addAction(_:))
+        return alertController
     }
 }

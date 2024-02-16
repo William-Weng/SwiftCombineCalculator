@@ -22,17 +22,33 @@ extension UIResponder {
 // MARK: - Double (function)
 extension Double {
     
-    func _currencyFormatted() -> String {
+    /// [幣值格式化 (小數 / 整數)](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/利用-numberformatter-顯示-money-2ef9e1abfc10)
+    /// - Returns: String
+    /// - Parameters:
+    ///   - minimumFractionDigits: [Int](https://stackoverflow.com/questions/41558832/how-to-format-a-double-into-currency-swift-3)
+    ///   - groupingSize: Int
+    func _currencyFormatted(minimumFractionDigits: Int = 2, groupingSize: Int = 3) -> String {
         
         let formatter = NumberFormatter()
         var isWholeNumber: Bool { isZero ? true : (!isNormal ? false : self == rounded())}
         
         formatter.numberStyle = .currency
-        formatter.minimumFractionDigits = (isWholeNumber) ? 0 : 2
-        
-        wwPrint("\(self) / \(self == rounded())")
+        formatter.minimumFractionDigits = (isWholeNumber) ? 0 : minimumFractionDigits
+        formatter.usesGroupingSeparator = true
+        formatter.groupingSeparator = "-"
+        formatter.groupingSize = groupingSize
         
         return formatter.string(for: self) ?? ""
+    }
+}
+
+// MARK: - String (subscript function)
+extension String {
+    
+    /// [在Swift編程語言中獲取字符串的第n個字符](https://www.codenong.com/24092884/)
+    /// "subscript"[5] => "r"
+    subscript(offset: Int) -> Character {
+        return self[index(startIndex, offsetBy: offset)]
     }
 }
 
@@ -48,77 +64,7 @@ extension String {
     func _Double() -> Double? { return Double(self) }
 }
 
-// MARK: - UIColr (init function)
-extension UIColor {
-    
-    /// UIColor(red: 255, green: 255, blue: 255, alpha: 255)
-    /// - Parameters:
-    ///   - red: 紅色 => 0~255
-    ///   - green: 綠色 => 0~255
-    ///   - blue: 藍色 => 0~255
-    ///   - alpha: 透明度 => 0~255
-    convenience init(red: Int, green: Int, blue: Int, alpha: Int) { self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0) }
-    
-    /// UIColor(red: 255, green: 255, blue: 255)
-    /// - Parameters:
-    ///   - red: 紅色 => 0~255
-    ///   - green: 綠色 => 0~255
-    ///   - blue: 藍色 => 0~255
-    convenience init(red: Int, green: Int, blue: Int) { self.init(red: red, green: green, blue: blue, alpha: 255) }
-    
-    /// UIColor(rgb: 0xFFFFFF)
-    /// - Parameter rgb: 顏色色碼的16進位值數字
-    convenience init(rgb: Int) { self.init(red: (rgb >> 16) & 0xFF, green: (rgb >> 8) & 0xFF, blue: rgb & 0xFF) }
-    
-    /// UIColor(rgba: 0xFFFFFFFF)
-    /// - Parameter rgba: 顏色的16進位值數字
-    convenience init(rgba: Int) { self.init(red: (rgba >> 24) & 0xFF, green: (rgba >> 16) & 0xFF, blue: (rgba >> 8) & 0xFF, alpha: (rgba) & 0xFF) }
-    
-    /// UIColor(rgb: #FFFFFF)
-    /// - Parameter rgb: 顏色的16進位值字串
-    convenience init(rgb: String) {
-        
-        let ruleRGB = "^#[0-9A-Fa-f]{6}$"
-        let predicateRGB = Constant.Predicate.matches(regex: ruleRGB).build()
-        
-        guard predicateRGB.evaluate(with: rgb),
-              let string = rgb.split(separator: "#").last,
-              let number = Int.init(string, radix: 16)
-        else {
-            self.init(red: 0, green: 0, blue: 0, alpha: 0); return
-        }
-        
-        self.init(rgb: number)
-    }
-    
-    /// UIColor(rgba: #FFFFFFFF)
-    /// - Parameter rgba: 顏色的16進位值字串
-    convenience init(rgba: String) {
-        
-        let ruleRGBA = "^#[0-9A-Fa-f]{8}$"
-        let predicateRGBA = Constant.Predicate.matches(regex: ruleRGBA).build()
-        
-        guard predicateRGBA.evaluate(with: rgba),
-              let string = rgba.split(separator: "#").last,
-              let number = Int.init(string, radix: 16)
-        else {
-            self.init(red: 0, green: 0, blue: 0, alpha: 0); return
-        }
-        
-        self.init(rgba: number)
-    }
-    
-    /// UIColor(bitmap: [255, 128, 64, 128])
-    /// - Parameter bitmap: RGBA的Array => [255, 128, 64, 128]
-    convenience init(bitmap: [UInt8]) {
-        switch bitmap.count {
-        case 3:  self.init(red: CGFloat(bitmap[0]) / 255, green: CGFloat(bitmap[1]) / 255, blue: CGFloat(bitmap[2]) / 255, alpha: 1.0)
-        case 4:  self.init(red: CGFloat(bitmap[0]) / 255, green: CGFloat(bitmap[1]) / 255, blue: CGFloat(bitmap[2]) / 255, alpha: CGFloat(bitmap[3]) / 255)
-        default: self.init(red: 0, green: 0, blue: 0, alpha: 0)
-        }
-    }
-}
-
+// MARK: - UIView (function)
 extension UIView {
     
     /// [設置陰影](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/同時實現圓角和陰影-bee263a41c7)
@@ -129,11 +75,12 @@ extension UIView {
     ///   - opacity: 陰影不透明度
     ///   - radius: 陰影半徑
     ///   - cornerRadius: 圓角半徑
-    func _shadow(with color: UIColor, backgroundColor: UIColor, offset: CGSize, opacity: Float, radius: CGFloat, cornerRadius: CGFloat) {
-        layer._shadow(with: color, backgroundColor: backgroundColor, offset: offset, opacity: opacity, radius: radius, cornerRadius: cornerRadius)
+    func _shadow(color: UIColor, backgroundColor: UIColor, offset: CGSize, opacity: Float, radius: CGFloat, cornerRadius: CGFloat) {
+        layer._shadow(color: color, backgroundColor: backgroundColor, offset: offset, opacity: opacity, radius: radius, cornerRadius: cornerRadius)
     }
 }
 
+// MARK: - CALayer (function)
 extension CALayer {
     
     /// [設置陰影](https://www.jianshu.com/p/2c90d6a637f7)
@@ -144,7 +91,7 @@ extension CALayer {
     ///   - opacity: 陰影不透明度
     ///   - radius: 陰影半徑
     ///   - cornerRadius: 圓角半徑
-    func _shadow(with color: UIColor, backgroundColor: UIColor, offset: CGSize, opacity: Float, radius: CGFloat, cornerRadius: CGFloat) {
+    func _shadow(color: UIColor, backgroundColor: UIColor, offset: CGSize, opacity: Float, radius: CGFloat, cornerRadius: CGFloat) {
         
         shadowColor = color.cgColor
         shadowOffset = offset
