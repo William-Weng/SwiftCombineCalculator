@@ -1,0 +1,694 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		814D9CC62B7EF348005D9849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CC52B7EF348005D9849 /* AppDelegate.swift */; };
+		814D9CC82B7EF348005D9849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CC72B7EF348005D9849 /* SceneDelegate.swift */; };
+		814D9CCA2B7EF348005D9849 /* AlgebraicAverageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CC92B7EF348005D9849 /* AlgebraicAverageViewController.swift */; };
+		814D9CCD2B7EF348005D9849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814D9CCB2B7EF348005D9849 /* Main.storyboard */; };
+		814D9CCF2B7EF349005D9849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814D9CCE2B7EF349005D9849 /* Assets.xcassets */; };
+		814D9CD22B7EF349005D9849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814D9CD02B7EF349005D9849 /* LaunchScreen.storyboard */; };
+		814D9CDD2B7EF34A005D9849 /* SwiftCombineCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CDC2B7EF34A005D9849 /* SwiftCombineCalculatorTests.swift */; };
+		814D9CE72B7EF34A005D9849 /* SwiftCombineCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CE62B7EF34A005D9849 /* SwiftCombineCalculatorUITests.swift */; };
+		814D9CE92B7EF34A005D9849 /* SwiftCombineCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CE82B7EF34A005D9849 /* SwiftCombineCalculatorUITestsLaunchTests.swift */; };
+		814D9CFD2B7EF8ED005D9849 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CFA2B7EF8ED005D9849 /* Extension.swift */; };
+		814D9CFE2B7EF8ED005D9849 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CFB2B7EF8ED005D9849 /* Utility.swift */; };
+		814D9CFF2B7EF8ED005D9849 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D9CFC2B7EF8ED005D9849 /* Constant.swift */; };
+		814D9D022B7F0217005D9849 /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 814D9D012B7F0217005D9849 /* WWPrint */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		814D9CD92B7EF34A005D9849 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 814D9CBA2B7EF348005D9849 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 814D9CC12B7EF348005D9849;
+			remoteInfo = SwiftCombineCalculator;
+		};
+		814D9CE32B7EF34A005D9849 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 814D9CBA2B7EF348005D9849 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 814D9CC12B7EF348005D9849;
+			remoteInfo = SwiftCombineCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		814D9CC22B7EF348005D9849 /* SwiftCombineCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCombineCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		814D9CC52B7EF348005D9849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		814D9CC72B7EF348005D9849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		814D9CC92B7EF348005D9849 /* AlgebraicAverageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgebraicAverageViewController.swift; sourceTree = "<group>"; };
+		814D9CCC2B7EF348005D9849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		814D9CCE2B7EF349005D9849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		814D9CD12B7EF349005D9849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		814D9CD32B7EF349005D9849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		814D9CD82B7EF34A005D9849 /* SwiftCombineCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCombineCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		814D9CDC2B7EF34A005D9849 /* SwiftCombineCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCombineCalculatorTests.swift; sourceTree = "<group>"; };
+		814D9CE22B7EF34A005D9849 /* SwiftCombineCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCombineCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		814D9CE62B7EF34A005D9849 /* SwiftCombineCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCombineCalculatorUITests.swift; sourceTree = "<group>"; };
+		814D9CE82B7EF34A005D9849 /* SwiftCombineCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCombineCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		814D9CFA2B7EF8ED005D9849 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		814D9CFB2B7EF8ED005D9849 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		814D9CFC2B7EF8ED005D9849 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		814D9CBF2B7EF348005D9849 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814D9D022B7F0217005D9849 /* WWPrint in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814D9CD52B7EF34A005D9849 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814D9CDF2B7EF34A005D9849 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		814D9CB92B7EF348005D9849 = {
+			isa = PBXGroup;
+			children = (
+				814D9CC42B7EF348005D9849 /* SwiftCombineCalculator */,
+				814D9CDB2B7EF34A005D9849 /* SwiftCombineCalculatorTests */,
+				814D9CE52B7EF34A005D9849 /* SwiftCombineCalculatorUITests */,
+				814D9CC32B7EF348005D9849 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		814D9CC32B7EF348005D9849 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CC22B7EF348005D9849 /* SwiftCombineCalculator.app */,
+				814D9CD82B7EF34A005D9849 /* SwiftCombineCalculatorTests.xctest */,
+				814D9CE22B7EF34A005D9849 /* SwiftCombineCalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		814D9CC42B7EF348005D9849 /* SwiftCombineCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CF82B7EF43D005D9849 /* Setting */,
+				814D9CF92B7EF8DA005D9849 /* Utility */,
+				814D9CF72B7EF434005D9849 /* Material */,
+				814D9CF62B7EF420005D9849 /* Storyboard */,
+				814D9CF52B7EF410005D9849 /* ViewController */,
+				814D9CC52B7EF348005D9849 /* AppDelegate.swift */,
+				814D9CC72B7EF348005D9849 /* SceneDelegate.swift */,
+			);
+			path = SwiftCombineCalculator;
+			sourceTree = "<group>";
+		};
+		814D9CDB2B7EF34A005D9849 /* SwiftCombineCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CDC2B7EF34A005D9849 /* SwiftCombineCalculatorTests.swift */,
+			);
+			path = SwiftCombineCalculatorTests;
+			sourceTree = "<group>";
+		};
+		814D9CE52B7EF34A005D9849 /* SwiftCombineCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CE62B7EF34A005D9849 /* SwiftCombineCalculatorUITests.swift */,
+				814D9CE82B7EF34A005D9849 /* SwiftCombineCalculatorUITestsLaunchTests.swift */,
+			);
+			path = SwiftCombineCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		814D9CF52B7EF410005D9849 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CC92B7EF348005D9849 /* AlgebraicAverageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		814D9CF62B7EF420005D9849 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CCB2B7EF348005D9849 /* Main.storyboard */,
+				814D9CD02B7EF349005D9849 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		814D9CF72B7EF434005D9849 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CCE2B7EF349005D9849 /* Assets.xcassets */,
+			);
+			path = Material;
+			sourceTree = "<group>";
+		};
+		814D9CF82B7EF43D005D9849 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CD32B7EF349005D9849 /* Info.plist */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		814D9CF92B7EF8DA005D9849 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				814D9CFC2B7EF8ED005D9849 /* Constant.swift */,
+				814D9CFA2B7EF8ED005D9849 /* Extension.swift */,
+				814D9CFB2B7EF8ED005D9849 /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		814D9CC12B7EF348005D9849 /* SwiftCombineCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814D9CEC2B7EF34A005D9849 /* Build configuration list for PBXNativeTarget "SwiftCombineCalculator" */;
+			buildPhases = (
+				814D9CBE2B7EF348005D9849 /* Sources */,
+				814D9CBF2B7EF348005D9849 /* Frameworks */,
+				814D9CC02B7EF348005D9849 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCombineCalculator;
+			packageProductDependencies = (
+				814D9D012B7F0217005D9849 /* WWPrint */,
+			);
+			productName = SwiftCombineCalculator;
+			productReference = 814D9CC22B7EF348005D9849 /* SwiftCombineCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		814D9CD72B7EF34A005D9849 /* SwiftCombineCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814D9CEF2B7EF34A005D9849 /* Build configuration list for PBXNativeTarget "SwiftCombineCalculatorTests" */;
+			buildPhases = (
+				814D9CD42B7EF34A005D9849 /* Sources */,
+				814D9CD52B7EF34A005D9849 /* Frameworks */,
+				814D9CD62B7EF34A005D9849 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				814D9CDA2B7EF34A005D9849 /* PBXTargetDependency */,
+			);
+			name = SwiftCombineCalculatorTests;
+			productName = SwiftCombineCalculatorTests;
+			productReference = 814D9CD82B7EF34A005D9849 /* SwiftCombineCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		814D9CE12B7EF34A005D9849 /* SwiftCombineCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 814D9CF22B7EF34A005D9849 /* Build configuration list for PBXNativeTarget "SwiftCombineCalculatorUITests" */;
+			buildPhases = (
+				814D9CDE2B7EF34A005D9849 /* Sources */,
+				814D9CDF2B7EF34A005D9849 /* Frameworks */,
+				814D9CE02B7EF34A005D9849 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				814D9CE42B7EF34A005D9849 /* PBXTargetDependency */,
+			);
+			name = SwiftCombineCalculatorUITests;
+			productName = SwiftCombineCalculatorUITests;
+			productReference = 814D9CE22B7EF34A005D9849 /* SwiftCombineCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		814D9CBA2B7EF348005D9849 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					814D9CC12B7EF348005D9849 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					814D9CD72B7EF34A005D9849 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 814D9CC12B7EF348005D9849;
+					};
+					814D9CE12B7EF34A005D9849 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 814D9CC12B7EF348005D9849;
+					};
+				};
+			};
+			buildConfigurationList = 814D9CBD2B7EF348005D9849 /* Build configuration list for PBXProject "SwiftCombineCalculator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 814D9CB92B7EF348005D9849;
+			packageReferences = (
+				814D9D002B7F0217005D9849 /* XCRemoteSwiftPackageReference "WWPrint" */,
+			);
+			productRefGroup = 814D9CC32B7EF348005D9849 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				814D9CC12B7EF348005D9849 /* SwiftCombineCalculator */,
+				814D9CD72B7EF34A005D9849 /* SwiftCombineCalculatorTests */,
+				814D9CE12B7EF34A005D9849 /* SwiftCombineCalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		814D9CC02B7EF348005D9849 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814D9CD22B7EF349005D9849 /* LaunchScreen.storyboard in Resources */,
+				814D9CCF2B7EF349005D9849 /* Assets.xcassets in Resources */,
+				814D9CCD2B7EF348005D9849 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814D9CD62B7EF34A005D9849 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814D9CE02B7EF34A005D9849 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		814D9CBE2B7EF348005D9849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814D9CFE2B7EF8ED005D9849 /* Utility.swift in Sources */,
+				814D9CCA2B7EF348005D9849 /* AlgebraicAverageViewController.swift in Sources */,
+				814D9CC62B7EF348005D9849 /* AppDelegate.swift in Sources */,
+				814D9CC82B7EF348005D9849 /* SceneDelegate.swift in Sources */,
+				814D9CFD2B7EF8ED005D9849 /* Extension.swift in Sources */,
+				814D9CFF2B7EF8ED005D9849 /* Constant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814D9CD42B7EF34A005D9849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814D9CDD2B7EF34A005D9849 /* SwiftCombineCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		814D9CDE2B7EF34A005D9849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				814D9CE92B7EF34A005D9849 /* SwiftCombineCalculatorUITestsLaunchTests.swift in Sources */,
+				814D9CE72B7EF34A005D9849 /* SwiftCombineCalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		814D9CDA2B7EF34A005D9849 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 814D9CC12B7EF348005D9849 /* SwiftCombineCalculator */;
+			targetProxy = 814D9CD92B7EF34A005D9849 /* PBXContainerItemProxy */;
+		};
+		814D9CE42B7EF34A005D9849 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 814D9CC12B7EF348005D9849 /* SwiftCombineCalculator */;
+			targetProxy = 814D9CE32B7EF34A005D9849 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		814D9CCB2B7EF348005D9849 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				814D9CCC2B7EF348005D9849 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		814D9CD02B7EF349005D9849 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				814D9CD12B7EF349005D9849 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		814D9CEA2B7EF34A005D9849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		814D9CEB2B7EF34A005D9849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		814D9CED2B7EF34A005D9849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYETH449Y6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftCombineCalculator/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = idv.william.example2.SwiftCombineCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		814D9CEE2B7EF34A005D9849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYETH449Y6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftCombineCalculator/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = idv.william.example2.SwiftCombineCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		814D9CF02B7EF34A005D9849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYETH449Y6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = idv.william.example2.SwiftCombineCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCombineCalculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftCombineCalculator";
+			};
+			name = Debug;
+		};
+		814D9CF12B7EF34A005D9849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYETH449Y6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = idv.william.example2.SwiftCombineCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftCombineCalculator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftCombineCalculator";
+			};
+			name = Release;
+		};
+		814D9CF32B7EF34A005D9849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYETH449Y6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = idv.william.example2.SwiftCombineCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftCombineCalculator;
+			};
+			name = Debug;
+		};
+		814D9CF42B7EF34A005D9849 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYETH449Y6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = idv.william.example2.SwiftCombineCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftCombineCalculator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		814D9CBD2B7EF348005D9849 /* Build configuration list for PBXProject "SwiftCombineCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814D9CEA2B7EF34A005D9849 /* Debug */,
+				814D9CEB2B7EF34A005D9849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814D9CEC2B7EF34A005D9849 /* Build configuration list for PBXNativeTarget "SwiftCombineCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814D9CED2B7EF34A005D9849 /* Debug */,
+				814D9CEE2B7EF34A005D9849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814D9CEF2B7EF34A005D9849 /* Build configuration list for PBXNativeTarget "SwiftCombineCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814D9CF02B7EF34A005D9849 /* Debug */,
+				814D9CF12B7EF34A005D9849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		814D9CF22B7EF34A005D9849 /* Build configuration list for PBXNativeTarget "SwiftCombineCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				814D9CF32B7EF34A005D9849 /* Debug */,
+				814D9CF42B7EF34A005D9849 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		814D9D002B7F0217005D9849 /* XCRemoteSwiftPackageReference "WWPrint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/William-Weng/WWPrint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		814D9D012B7F0217005D9849 /* WWPrint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 814D9D002B7F0217005D9849 /* XCRemoteSwiftPackageReference "WWPrint" */;
+			productName = WWPrint;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 814D9CBA2B7EF348005D9849 /* Project object */;
+}
