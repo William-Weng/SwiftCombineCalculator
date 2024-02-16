@@ -12,7 +12,7 @@ final class Constant: NSObject {}
 
 // MARK: typealias
 extension Constant {
-    typealias RGBAInformation = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)   // [RGBA色彩模式的數值](https://stackoverflow.com/questions/28644311/how-to-get-the-rgb-code-int-from-an-uicolor-in-swift)
+    typealias TipButton = (type: Constant.TipButtonTagType?, value: Double)  // 小費設定值 (類型, 數值)
 }
 
 // MARK: enum
@@ -20,7 +20,7 @@ extension Constant {
     
     /// 小費按鈕分類
     enum TipButtonTagType: Int {
-                
+        
         case tenPercent = 110       // 10%
         case fiftenPercent = 115    // 15%
         case twentyPercent = 120    // 20%
@@ -30,15 +30,15 @@ extension Constant {
     /// 平分人數按鈕分類
     enum SplitButtonTagType: Int {
         
-        case plus = 101             // 增加
-        case minus = 201            // 減少
-        
+        case minus = 101            // 減少
+        case plus = 201             // 增加
+
         /// 圓角方向設定
         /// - Returns: CACornerMask
         func corners() -> CACornerMask {
             switch self {
-            case .plus: return [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-            case .minus: return [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+            case .minus: return [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+            case .plus: return [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
             }
         }
     }
