@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import CombineCocoa
 import WWPrint
 
 // MARK: AA制計算機
@@ -19,10 +20,17 @@ final class AlgebraicAverageViewController: UIViewController {
     @IBOutlet weak var totalTipLabel: UILabel!
     @IBOutlet weak var billInputView: UIView!
     @IBOutlet weak var inputBillLabel: UILabel!
+    @IBOutlet weak var billInputTextField: UITextField!
+
     @IBOutlet var tipButtons: [UIButton]!
     @IBOutlet var splitButtons: [UIButton]!
     
     private let radius = 16.0
+    
+    private let billSubject: PassthroughSubject<Double?, Never> = .init() // Subject的最大特點就是可以手動傳送資料
+    private var billInputViewPublisher: AnyPublisher<Double?, Never> { return billSubject.eraseToAnyPublisher() }
+    
+    private var cancelables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +69,8 @@ private extension AlgebraicAverageViewController {
     func initSetting() {
         initViewSetting()
         resultSetting(Model.Result(amountPerPerson: 0.0, totalBill: 0.0, totalTip: 0.0))
+        bind()
+        observe()
     }
     
     /// 初始化畫面設定
@@ -97,5 +107,35 @@ private extension AlgebraicAverageViewController {
         totalBillLabel.attributedText = totalTipText
         totalTipLabel.attributedText = totalTipText
         inputBillLabel.attributedText = inputBillLabelText
+    }
+}
+
+// MARK: - Combine
+private extension AlgebraicAverageViewController {
+    
+    /// 綁定變數 (把變數指標傳過去)
+    func bind() {
+        
+        billInputViewPublisher.sink { bill in
+            let bill = bill ?? 0.0
+            wwPrint("金額: \(bill)")
+        }.store(in: &cancelables)
+    }
+}
+
+// MARK: - CombineCocoa
+private extension AlgebraicAverageViewController {
+    
+    /// 觀察
+    func observe() {
+        observeBillInputTextField()
+    }
+    
+    /// [觀察文字輸入 => textFieldDidBeginEditing(_:)](https://developer.apple.com/documentation/uikit/uitextfielddelegate/1619590-textfielddidbeginediting)
+    func observeBillInputTextField() {
+        
+        billInput.textPublisher.sink { [unowned self] text in
+            billSubject.send(text?._Double())
+        }.store(in: &cancelables)
     }
 }

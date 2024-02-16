@@ -2,7 +2,7 @@
 //  Model.swift
 //  SwiftCombineCalculator
 //
-//  Created by iOS on 2024/2/1.
+//  Created by William.Weng on 2024/2/16.
 //
 
 import Foundation

@@ -477,6 +477,7 @@
                     </view>
                     <connections>
                         <outlet property="amountPerPersonLabel" destination="doz-F8-6B7" id="ZbS-Xu-3eF"/>
+                        <outlet property="billInputTextField" destination="7i1-07-YQT" id="dan-yQ-edi"/>
                         <outlet property="billInputView" destination="V8V-gA-Zqe" id="88c-o5-OxO"/>
                         <outlet property="inputBillLabel" destination="FC7-yo-qKw" id="AIs-m3-BzT"/>
                         <outlet property="totalBillLabel" destination="gDD-m7-eAB" id="UjP-xe-dQx"/>
