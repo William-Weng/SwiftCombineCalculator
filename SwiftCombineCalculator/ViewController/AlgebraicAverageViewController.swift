@@ -5,6 +5,10 @@
 //  Created by William.Weng on 2024/2/16.
 //
 /// [AA制計算機](https://zh.wikipedia.org/zh-tw/AA制)
+/// [色卡](https://coolors.co/palettes/trending)
+/// [CombineCocoa 是基於 Combine 對 UIKit Controls 的封裝](https://juejin.cn/post/6844903910944030727)
+/// [Combine之Subjects - 知乎](https://zhuanlan.zhihu.com/p/344164793)
+/// [iOS & Swift - MVVM, Combine, SnapKit, Snapshot/UI/Unit Tests](https://www.udemy.com/course/ios-swift-mvvm-combine-snapkit-snapshot-ui-unit-tests/)
 
 import UIKit
 import Combine
@@ -25,11 +29,12 @@ final class AlgebraicAverageViewController: UIViewController {
     @IBOutlet weak var billInputTextField: UITextField!
 
     @IBOutlet var tipButtons: [UIButton]!
-    @IBOutlet var splitButtons: [UIButton]!
+    @IBOutlet var splitButtons: [MyButton]!
     
     private let radius = 16.0
     private let selectedColor: UIColor = .systemBlue
     private let unselectedColor: UIColor = .lightGray
+    private let viewModel = CalculatorViewModel()
 
     // Subject的最大特點就是可以手動傳送資料
     private let billSubject: PassthroughSubject<Double?, Never> = .init()
@@ -105,9 +110,8 @@ private extension AlgebraicAverageViewController {
         
         billSubject.send(nil)
         tipSubject.send(nil)
-        splitSubject.send(0)
-        
-        resetSpiltButtons()
+        splitSubject.send(1)
+        billInputTextField.text = "0"
         
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 5.0, initialSpringVelocity: 0.5, options: .curveEaseInOut) { [unowned self] in
             logoView.transform = .init(scaleX: 2.0, y: 2.0)
@@ -120,9 +124,9 @@ private extension AlgebraicAverageViewController {
     /// - Parameter result: Model.Result
     func resultSetting(_ result: Model.Result) {
         
-        let amountPerPersonText = NSMutableAttributedString(string: result.amountPerPerson._currencyFormatted(), attributes: [.font: Constant.ThemeFont.bold.font(ofSize: 48)])
-        let totalBillText = NSMutableAttributedString(string: result.totalBill._currencyFormatted(), attributes: [.font: Constant.ThemeFont.bold.font(ofSize: 24)])
-        let totalTipText = NSMutableAttributedString(string: result.totalTip._currencyFormatted(), attributes: [.font: Constant.ThemeFont.bold.font(ofSize: 24)])
+        let amountPerPersonText = NSMutableAttributedString(string: result.amountPerPerson._currencyFormatted() ?? "", attributes: [.font: Constant.ThemeFont.bold.font(ofSize: 48)])
+        let totalBillText = NSMutableAttributedString(string: result.totalBill._currencyFormatted() ?? "", attributes: [.font: Constant.ThemeFont.bold.font(ofSize: 24)])
+        let totalTipText = NSMutableAttributedString(string: result.totalTip._currencyFormatted() ?? "", attributes: [.font: Constant.ThemeFont.bold.font(ofSize: 24)])
         let inputBillLabelText = NSMutableAttributedString(string: "\(amountPerPersonText.string[0])", attributes: [.font: Constant.ThemeFont.bold.font(ofSize: 24)])
         
         amountPerPersonText.addAttributes([.font: Constant.ThemeFont.bold.font(ofSize: 24)], range: NSMakeRange(0, 1))
@@ -130,7 +134,7 @@ private extension AlgebraicAverageViewController {
         totalTipText.addAttributes([.font: Constant.ThemeFont.bold.font(ofSize: 16)], range: NSMakeRange(0, 1))
         
         amountPerPersonLabel.attributedText = amountPerPersonText
-        totalBillLabel.attributedText = totalTipText
+        totalBillLabel.attributedText = totalBillText
         totalTipLabel.attributedText = totalTipText
         inputBillLabel.attributedText = inputBillLabelText
     }
@@ -177,8 +181,27 @@ private extension AlgebraicAverageViewController {
     
     /// 綁定變數 (把變數指標傳過去)
     func bind() {
+        
         bindInputValuePublisher()
         splitButtons.forEach { bindSplitCount(button: $0) }
+        
+        let input = CalculatorViewModel.Input(
+            billPublisher: billInputValuePublisher,
+            tipPublisher: tipValuePublisher,
+            splitPublisher: splitValuePublisher,
+            logoViewTapPublisher: logoViewTapPublisher
+        )
+        
+        let output = viewModel.transform(input: input)
+
+        output.updateViewPublisher.sink { [unowned self] result in
+            resultSetting(result)
+            wwPrint("\(result)")
+        }.store(in: &cancelables)
+        
+        output.resetCalcuatorPublisher.sink { [unowned self] _ in
+            resetAction()
+        }.store(in: &cancelables)
     }
     
     /// 綁定金額
@@ -197,9 +220,6 @@ private extension AlgebraicAverageViewController {
         guard let type = Constant.SplitButtonTagType(rawValue: button.tag) else { return }
         
         button.tapPublisher.flatMap { [unowned self] _ in
-            
-            resetSpiltButtons()
-            button.backgroundColor = selectedColor
             
             var value: Int = splitSubject.value
             
@@ -228,12 +248,11 @@ private extension AlgebraicAverageViewController {
     func viewTapPublisherMaker(numberOfTapsRequired: Int = 1, forView view: UIView) -> AnyPublisher<Void, Never> {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        
         tapGesture.numberOfTapsRequired = numberOfTapsRequired
         view.addGestureRecognizer(tapGesture)
         
-        return tapGesture.tapPublisher.flatMap { _ in
-            Just(())
-        }.eraseToAnyPublisher()
+        return tapGesture.tapPublisher.flatMap { _ in Just(()) }.eraseToAnyPublisher()
     }
 }
 

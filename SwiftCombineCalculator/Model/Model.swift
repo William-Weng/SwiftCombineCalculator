@@ -5,7 +5,7 @@
 //  Created by William.Weng on 2024/2/16.
 //
 
-import Foundation
+import UIKit
 
 final class Model {
     
@@ -14,5 +14,15 @@ final class Model {
         let amountPerPerson: Double
         let totalBill: Double
         let totalTip: Double
+    }
+}
+
+class MyButton: UIButton {
+    
+    override open var isHighlighted: Bool {
+        didSet {
+            super.isHighlighted = isHighlighted
+            backgroundColor = isHighlighted ? .systemBlue : .lightGray
+        }
     }
 }

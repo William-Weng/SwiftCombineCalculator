@@ -23,11 +23,11 @@ extension UIResponder {
 extension Double {
     
     /// [幣值格式化 (小數 / 整數)](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/利用-numberformatter-顯示-money-2ef9e1abfc10)
-    /// - Returns: String
     /// - Parameters:
     ///   - minimumFractionDigits: [Int](https://stackoverflow.com/questions/41558832/how-to-format-a-double-into-currency-swift-3)
-    ///   - groupingSize: Int
-    func _currencyFormatted(minimumFractionDigits: Int = 2, groupingSize: Int = 3) -> String {
+    ///   - groupingSize: [Int](https://medium.com/彼得潘的-swift-ios-app-開發教室/adding-thousand-separator-to-number-in-swift-數字增加千分位-4721d8998e7b )
+    /// - Returns: [String](https://www.swiftbysundell.com/articles/formatting-numbers-in-swift/)
+    func _currencyFormatted(minimumFractionDigits: Int = 2, groupingSize: Int = 3) -> String? {
         
         let formatter = NumberFormatter()
         var isWholeNumber: Bool { isZero ? true : (!isNormal ? false : self == rounded())}
@@ -35,10 +35,9 @@ extension Double {
         formatter.numberStyle = .currency
         formatter.minimumFractionDigits = (isWholeNumber) ? 0 : minimumFractionDigits
         formatter.usesGroupingSeparator = true
-        formatter.groupingSeparator = "-"
         formatter.groupingSize = groupingSize
         
-        return formatter.string(for: self) ?? ""
+        return formatter.string(for: self)
     }
 }
 
